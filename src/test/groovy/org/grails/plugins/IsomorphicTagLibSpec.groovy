@@ -9,18 +9,12 @@ import spock.lang.Specification
 @TestFor(IsomorphicTagLib)
 class IsomorphicTagLibSpec extends Specification {
 
-    def setup() {
-
-        def service = Mock(IsomorphicRenderingService)
-
-        tagLib.isomorphicRenderingService = service
-        tagLib.isomorphicRenderingService.render(_, _, _) >> "3.0"
-    }
-
-    def cleanup() {
-    }
-
     void "testBundleTag"() {
+        setup:
+        tagLib.isomorphicRenderingService = Mock(IsomorphicRenderingService) {
+            render(_, _, _) >> "3.0"
+        }
+
         expect:
         applyTemplate('<iso:bundle path="${path}" data="${data}" />',
                 [path: 'test.js', data: [a: 1, b: 2]]) == """<div id='app'>3.0</div>
