@@ -44,4 +44,4 @@ else {
 
 When writing isomorphic React, it is important to make sure that the client and server-side rendered code is identically, or React will be unable to reuse the server-side rendered code. For this reason, the plugin will always supply both the client and server render functions with the same data - this should evaluate your React code the same way on both platforms.
 
-Please see this sample project to see the plugin usage in conjunction with webpack, using the React profile for Grails. 
+Please see this [sample project to see the plugin usage](https://github.com/ZacharyKlein/grails-isomorphic-react) in conjunction with webpack, using the [React profile](https://github.com/grails-profiles/react) for Grails. 
