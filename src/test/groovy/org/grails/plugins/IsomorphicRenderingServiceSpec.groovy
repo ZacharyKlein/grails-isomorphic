@@ -24,7 +24,7 @@ class IsomorphicRenderingServiceSpec extends Specification {
         def data = [a: 1, b: 2]
 
         when: "Javascript is rendered"
-        def result = service.render((InputStream) new ByteArrayInputStream(javascript.getBytes()), data)
+        def result = service.render((InputStream) new ByteArrayInputStream(javascript.getBytes()), data, null)
 
         then: "the expected result is rendered"
         result == "3.0"
