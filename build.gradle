@@ -46,7 +46,7 @@ grailsPublish {
     // TODO: Provide values here
     user = 'user'
     key = 'key'
-    githubSlug = 'foo/bar'
+    githubSlug = 'https://github.com/ZacharyKlein/grails-isomorphic'
     license {
         name = 'Apache-2.0'
     }
