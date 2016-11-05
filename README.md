@@ -1,6 +1,9 @@
 # grails-isomorphic
 Grails Isomorphic Rendering Plugin
 
+[![Build Status](https://travis-ci.org/ZacharyKlein/grails-isomorphic.svg?branch=master)](https://travis-ci.org/ZacharyKlein/grails-isomorphic)
+
+
 This plugin provides a single GSP taglib, `<iso:bundle/>` which will allow rendering a Javascript file through Nashorn on the server, as well as loading the same Javascript on the client. This plugin was designed to be used with React, but is not limited to that library.
 
 ## Usage
