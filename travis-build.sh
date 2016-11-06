@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-./gradlew clean check assemble
+./gradlew clean test assemble --info
 
 EXIT_STATUS=0
 
