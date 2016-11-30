@@ -18,6 +18,7 @@
  */
 package org.grails.plugins
 
+import grails.converters.JSON
 import groovy.json.JsonBuilder
 import jdk.nashorn.api.scripting.NashornScriptEngine
 
@@ -41,15 +42,17 @@ class IsomorphicRenderingService {
     }
 
     String render(InputStream inputStream, Map data, String function) {
-        log.info "Rendering React with data: $data"
+        log.info "Rendering server-side JavaScript with data: $data"
         try {
             nashorn.get().eval(new InputStreamReader(inputStream))
 
-            Object html = nashorn.get().invokeFunction(function ?: 'renderServer', new JsonBuilder(data).toString())
+            def json = data as JSON
+
+            Object html = nashorn.get().invokeFunction(function ?: 'renderServer', json)
             return String.valueOf(html)
         }
         catch (Exception e) {
-            throw new IllegalStateException("unable to render React component", e)
+            throw new IllegalStateException("unable to render server-side JavaScript", e)
         }
     }
 

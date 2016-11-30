@@ -13,7 +13,7 @@ class IsomorphicGrailsPlugin extends Plugin {
     def author = "Zachary Klein"
     def authorEmail = "zak@silver-chalice.com"
     def description = '''\
-        Provides simple server-side rendering of Javascript with Nashorn 
+        Provides simple server-side rendering of JavaScript with Nashorn 
         '''
     def profiles = ['web']
     def documentation = "https://github.com/ZacharyKlein/grails-isomorphic/blob/master/README.md"

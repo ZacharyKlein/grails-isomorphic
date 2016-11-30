@@ -1,11 +1,14 @@
 package org.grails.plugins
 
 import grails.test.mixin.TestFor
+import grails.test.mixin.TestMixin
+import grails.test.mixin.web.ControllerUnitTestMixin
 import spock.lang.Specification
 
 /**
  * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
+@TestMixin(ControllerUnitTestMixin)
 @TestFor(IsomorphicRenderingService)
 class IsomorphicRenderingServiceSpec extends Specification {
 
@@ -23,7 +26,7 @@ class IsomorphicRenderingServiceSpec extends Specification {
 
         def data = [a: 1, b: 2]
 
-        when: "Javascript is rendered"
+        when: "JavaScript is rendered"
         def result = service.render((InputStream) new ByteArrayInputStream(javascript.getBytes()), data, null)
 
         then: "the expected result is rendered"
