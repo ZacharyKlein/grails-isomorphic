@@ -27,14 +27,14 @@ class IsomorphicTagLib {
     def isomorphicRenderingService
 
     /*
-    * bundle - tag to render JS bundle server-side and load the result + client-side JS bundle
-    * @attrs.path (required) = path to server-side bundle
+    * javascript - tag to render a JavaScript file server-side and output the result
+    * @attrs.path (required) = path to JavaScript file
     * @attrs.data = map to be converted to JSON for initial state
     * @attrs.element = div id for app
-    * @attrs.publicPath = path to client-side bundle (defaults to /static/${path})
-    * @attrs.clientRenderFunction = name of render function for client bundle (defaults to 'renderClient')
+    * @attrs.publicPath = path to client-side JavaScript file (defaults to /static/${path})
+    * @attrs.clientRenderFunction = name of render function for client JavaScript (defaults to 'renderClient')
     * */
-    def bundle = { attrs ->
+    def javascript = { attrs ->
         if(attrs.path) {
 
             String content = isomorphicRenderingService.render(
